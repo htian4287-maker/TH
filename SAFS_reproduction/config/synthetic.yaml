@@ -1,0 +1,20 @@
+safs:
+  iterations_per_level: 4
+  maximum_pyramid_levels: 9
+  albedo_window_final_px: 61
+  reflectance_smoothing_final_px: 3
+  lunar_lambert_l: 0.55
+  reflectance_weight: 1.0
+  normal_weight: 0.1
+  finite_difference_step_m: 0.05
+  maximum_height_step_m: 0.1
+  newton_damping: 0.000001
+  line_search_steps: 6
+  convergence_tolerance_m: 0.001
+  shadow_threshold_normalized: 0.08
+  shadow_percentile: 1.0
+  albedo_minimum: 0.35
+  albedo_maximum: 2.5
+  preserve_vertical_datum: true
+  sweep_mode: four_color
+  sequential_max_pixels: 65536

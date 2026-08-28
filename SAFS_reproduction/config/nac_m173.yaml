@@ -1,0 +1,32 @@
+safs:
+  # Parameters missing from Wu et al. (2016) remain explicit and are swept.
+  iterations_per_level: 5
+  maximum_pyramid_levels: 9
+  albedo_window_final_px: 31
+  reflectance_smoothing_final_px: 5
+  lunar_lambert_l: 0.55
+  reflectance_weight: 1.0
+  normal_weight: 0.005
+  finite_difference_step_m: 0.05
+  maximum_height_step_m: 0.25
+  newton_damping: 0.000001
+  line_search_steps: 6
+  convergence_tolerance_m: 0.001
+  shadow_threshold_normalized: 0.08
+  shadow_percentile: 1.0
+  albedo_minimum: 0.35
+  albedo_maximum: 2.5
+  preserve_vertical_datum: true
+  sweep_mode: four_color
+  sequential_max_pixels: 65536
+
+inputs:
+  image: /mnt/e/NAC_Photometry/paper2016/05_safs_inputs/nac_iof_0p5m.tif
+  coarse_dem: /mnt/e/NAC_Photometry/paper2016/05_safs_inputs/sldem_coarse_12x11.tif
+  valid_mask: /mnt/e/NAC_Photometry/paper2016/05_safs_inputs/nac_valid_mask_0p5m.tif
+  geometry: /mnt/e/NAC_Photometry/paper2016/06_geometry/M173246166LE.geometry_1382x1262.tif
+  geometry_bands:
+    emission: 2
+    incidence: 3
+    sun_azimuth: 6
+    spacecraft_azimuth: 7
