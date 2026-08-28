@@ -1,0 +1,4 @@
+additional_max_iterations: 40
+relative_tolerance: 0.000001
+max_consecutive_rejections: 50
+parallel_models: 2

@@ -1,0 +1,77 @@
+case:
+  size: 40
+  pixel_size_m: 2.0
+  prior_sigma_px: 5.0
+  noise_std: 0.00008
+  seed: 44
+  seed_sweep: [44, 45, 46, 47, 48]
+
+hapke:
+  opposition_amplitude: 1.0
+  opposition_width: 0.06
+  phase_function: dhg
+  dhg_b: 0.30
+  dhg_c: 0.70
+  h_function: level2
+  legendre_order: 15
+  lunar_roughness_degrees: 11.0
+
+phcl:
+  dem_weight: 0.0002
+  dem_sigma_px: 6.0
+  initial_albedo: 0.4
+  max_iterations: 60
+  relative_tolerance: 0.000001
+  max_rejections: 50
+
+integration:
+  depth_weight: 0.01
+  lowpass_sigma_px: 11.0
+  max_successful_iterations: 1600
+  max_steps_without_improvement: 100
+  max_total_updates: 2200
+  relative_tolerance: 0.0000000001
+
+experiments:
+  - id: imsa11_to_imsa11
+    truth_model: imsa
+    inversion_model: imsa
+    truth_roughness_degrees: 11.0
+    inversion_roughness_degrees: 11.0
+    category: matched
+  - id: amsa11_to_amsa11
+    truth_model: amsa
+    inversion_model: amsa
+    truth_roughness_degrees: 11.0
+    inversion_roughness_degrees: 11.0
+    category: matched
+  - id: amsa11_to_imsa11
+    truth_model: amsa
+    inversion_model: imsa
+    truth_roughness_degrees: 11.0
+    inversion_roughness_degrees: 11.0
+    category: multiple_scattering_mismatch
+  - id: imsa11_to_amsa11
+    truth_model: imsa
+    inversion_model: amsa
+    truth_roughness_degrees: 11.0
+    inversion_roughness_degrees: 11.0
+    category: multiple_scattering_mismatch
+  - id: amsa11_to_amsa0
+    truth_model: amsa
+    inversion_model: amsa
+    truth_roughness_degrees: 11.0
+    inversion_roughness_degrees: 0.0
+    category: roughness_mismatch
+  - id: amsa0_to_amsa11
+    truth_model: amsa
+    inversion_model: amsa
+    truth_roughness_degrees: 0.0
+    inversion_roughness_degrees: 11.0
+    category: roughness_mismatch
+  - id: amsa0_to_amsa0
+    truth_model: amsa
+    inversion_model: amsa
+    truth_roughness_degrees: 0.0
+    inversion_roughness_degrees: 0.0
+    category: matched_roughness_control

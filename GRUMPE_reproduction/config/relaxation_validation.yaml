@@ -1,0 +1,19 @@
+synthetic:
+  size: 48
+  pixel_size_m: 2.0
+  prior_sigma_px: 6.0
+  noise_std: 0.0
+  seed: 42
+
+stress:
+  bias_p: 0.015
+  bias_q: -0.012
+
+solver:
+  depth_weight: 0.20
+  lowpass_sigma_px: 6.0
+  max_successful_iterations: 1000
+  max_steps_without_improvement: 80
+  max_total_updates: 1200
+  relative_tolerance: 0.0000000001
+

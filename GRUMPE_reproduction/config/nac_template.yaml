@@ -1,0 +1,32 @@
+# 真实 NAC 数据配置模板。路径使用 WSL 形式，并保证全部影像与 DEM
+# 已投影到同一月球极射投影、同一分辨率、同一像元网格。
+project:
+  data_root: /mnt/e/NAC_Photometry/paper2016_multi
+  output_root: /mnt/e/NAC_Photometry/grumpe_reproduction
+
+inputs:
+  reference_dem: /mnt/e/NAC_Photometry/paper2016_multi/03_geometry/overlap_core/sldem_overlap_core_0p5m.tif
+  image_list: /mnt/e/NAC_Photometry/paper2016_multi/07_sfs_multi/00_lists/images_clean8.txt
+  calibrated_mapprojected_directory: /mnt/e/NAC_Photometry/paper2016_multi/03_geometry/mapproject_final
+  per_pixel_geometry_directory: /mnt/e/NAC_Photometry/paper2016_multi/13_grumpe_validation/geometry
+  bundle_adjust_prefix: /mnt/e/NAC_Photometry/paper2016_multi/05_ba/core9_final/run
+
+hapke:
+  model: imsa
+  phase_function: dhg
+  # 下列固定值必须用所选波段/区域的标定或论文参数替换，不能把模板值当结果。
+  opposition_amplitude: 1.0
+  opposition_width: 0.06
+  dhg_b: 0.30
+  dhg_c: 0.70
+
+phcl:
+  dem_weight: 0.0002
+  # 论文使用 15 px；真实 NAC 必须按粗 DEM 与输出影像的分辨率比重新验证。
+  dem_sigma_px: 15.0
+  max_iterations: 100
+
+integration:
+  depth_weight_candidates: [0.02, 0.05, 0.10, 0.20, 0.50]
+  lowpass_sigma_px_candidates: [8.0, 15.0, 30.0, 60.0]
+

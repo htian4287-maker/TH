@@ -1,0 +1,43 @@
+data:
+  train_ids:
+    - M1101537509RE
+    - M1149859210LE
+    - M1361553043RE
+    - M1389727403LE
+    - M1504596515RE
+    - M1504610541RE
+    - M173246166LE
+  holdout_id: M1193400008LE
+  image_directory: 13_grumpe_validation/03_geometry/clean8/images_2m
+  geometry_directory: 13_grumpe_validation/03_geometry/ba_pixel_geometry_full9_direct2m
+  reference_dem: 07_sfs_multi/03_pilot_dem/sldem_pilot_2m.tif
+  common_mask: 13_grumpe_validation/03_geometry/clean8/common_valid_mask.tif
+
+hapke:
+  opposition_amplitude: 1.0
+  opposition_width: 0.06
+  phase_function: dhg
+  dhg_b: 0.30
+  dhg_c: 0.70
+  h_function: level2
+  legendre_order: 15
+  roughness_degrees: 11.0
+
+phcl:
+  dem_weight: 0.0002
+  dem_sigma_px: 6.0
+  initial_albedo: 0.5
+  max_iterations: 20
+  relative_tolerance: 0.000001
+  max_rejections: 25
+  shadow_percentile: 1.0
+
+integration:
+  depth_weight: 0.01
+  lowpass_sigma_px: 11.0
+  relative_tolerance: 0.0000001
+  max_iterations: 1200
+
+models:
+  - imsa
+  - amsa

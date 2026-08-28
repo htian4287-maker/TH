@@ -1,0 +1,30 @@
+synthetic:
+  size: 72
+  pixel_size_m: 2.0
+  prior_sigma_px: 7.0
+  noise_std: 0.00008
+  seed: 42
+
+hapke:
+  opposition_amplitude: 1.0
+  opposition_width: 0.06
+  phase_function: dhg
+  dhg_b: 0.30
+  dhg_c: 0.70
+  cornette_shanks_n: 0.20
+
+phcl:
+  dem_weight: 0.0002
+  dem_sigma_px: 7.0
+  initial_albedo: 0.40
+  max_iterations: 60
+  relative_tolerance: 0.000001
+
+integration:
+  depth_weight: 0.20
+  lowpass_sigma_px: 7.0
+  # 专门检验第二篇论文所针对的系统性坡度误差；无偏 Poisson 结果仍单独保存。
+  stress_bias_p: 0.015
+  stress_bias_q: -0.012
+  rtol: 0.000000001
+  max_iterations: 5000
