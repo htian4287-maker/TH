@@ -1,0 +1,14 @@
+name: safs_method
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy>=1.24
+  - scipy>=1.10
+  - matplotlib>=3.7
+  - pyyaml>=6.0
+  - rasterio>=1.3
+  - pytest>=7.4
+  - pip
+  - pip:
+      - -e .
